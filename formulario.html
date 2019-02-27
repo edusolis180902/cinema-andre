@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+<head>
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="nombre" i>
+            <p>Ingrese el nombre:</p>
+           <input type="text" id="Nombre" placeholder="Boku no hero: Two Heroes">
+        </div>
+        <div class="duracionMinutos">
+            <p>Ingrese la duracion en minutos:</p>
+            <input type="number" id="duracion" placeholder="240">
+        </div>
+        <div class="genero">
+            <p>Ingrese el genero:</p>
+            <input type="text" id="genero" placeholder="Drama, Acción, Harem ...">
+        </div>
+        <div class="idiomaAudio">
+            <p>Ingrese el idioma del audio:</p>
+          <input type="text" id="idiomaaudio" placeholder="Arabe, Español, Inglés ...">
+        </div>
+        <div class="idiomaSub">
+            <p>Ingrese el idioma de los subtitulos:</p>
+            <input type="text" id="idiomasub" placeholder="Arabe, Español, Inglés ...">
+        </div>
+        <div class="sinopsis">
+            <p>Ingrese la sipnopsis:</p>
+            <input type="text" id="sinopsis" placeholder="La historia ronda alrededor de la muete de Kaori">
+        </div>
+        <div class="clasificacion">
+            <p>Ingrese la clasificacion:</p>
+							<input type="text" id="clasificacion" placholder="18+, PG, 15+ ...">
+        </div>
+        <div class="precio">
+            <p>Ingrese la precio en colones:</p>
+            <input type="number" id="precio" placeholder="35000, 2000, 17000 ...">
+        </div>
+        <div class="fecha">
+            <p>Ingrese la fecha:</p>
+            <input type="text" id="fecha" placeholder="MM/DD/AAAA">
+        </div>
+        <div class="horaInicio">
+            <p>Ingrese la hora de inicio</p>
+            <input type="number" id="hora" placeholder="2, 3, 7 ...">
+        </div>
+        <div class="minutoInicio">
+            <p>Ingrese el minuto de inicio</p>
+            <input type="number" id="minuto" placeholder="30, 12, 47 ...">
+        </div>
+        <div class="imagen" >
+            <p>Escoja una imagen:</p>
+            <input type="file" name="file" id="file" class="inputfile" />
+
+        </div>
+        <div class="estado">
+            <p>Escoja el Estado (Escoja entre 1 o 0)</p>
+						<input type="number" id="estado" placeholder= "1 = Activo - 0 = Inactivo">
+        </div>
+				<button type="button" name="button" id="botonguardar" onclick="botonguardarclick()">Guardar</button>
+    </div>
+		<script type="text/javascript" src="jquery.js">
+
+		</script>
+		<script type="text/javascript" src="frontEnd.js">
+
+		</script>
+</body>
+<style>
+    *{
+        padding:0;
+        margin:0;
+        font-family: 'Poppins',sans-serif;
+    }
+    body{
+        background: black;
+        overflow-x: hidden;
+    }
+    .container{
+        color:white;
+        width: 410px;
+        grid-template-areas:
+            "nombre nombre"
+            "duracionMinutos duracionMinutos"
+            "genero genero"
+            "idiomaAudio idiomaAudio"
+            "idiomaSub idiomaSub"
+            "sinopsis sinopsis"
+            "clasificacion clasificacion"
+            "precio precio"
+            "fecha fecha"
+            "horaInicio minutoInicio"
+            "imagen imagen"
+            "estado estado";
+        justify-items: center;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: 20px;
+        border-radius: 50px;
+    }
+    .container div{
+        height: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .container div input{
+			border: 2px solid #2F2F2F;
+    }
+    .nombre{
+        grid-area: nombre;
+        justify-items: center;
+    }
+    .duracionMinutos{
+        grid-area: duracionMinutos;
+        justify-items: center;
+    }
+    .genero{
+        grid-area: genero;
+        justify-items: center;
+    }
+    .idiomaAudio{
+        grid-area: idiomaAudio;
+        justify-items: center;
+    }
+    .idiomaSub{
+        grid-area: idiomaSub;
+        justify-items: center;
+    }
+    .sinopsis{
+        grid-area: sinopsis;
+        justify-items: center;
+    }
+    .clasificacion{
+        grid-area: clasificacion;
+        justify-items: center;
+    }
+    .precio{
+        grid-area: precio;
+        justify-items: center;
+    }
+    .fecha{
+        grid-area: fecha;
+        justify-items: center;
+    }
+    .horaInicio{
+        grid-area: horaInicio;
+        justify-items: center;
+        width:100%;
+    }
+		#botonguardar{
+			margin: 0 auto;
+		}
+    .minutoInicio{
+        grid-area: minutoInicio;
+        justify-items: center;
+        width:100%;
+    }
+    .imagen{
+        grid-area: imagen;
+        justify-items: center;
+    }
+
+    .inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: black;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: red;
+}
+    .estado{
+        grid-area: estado;
+        justify-items: center;
+    }
+    .range{
+        -webkit-appearance: none;
+        background: lightgray;
+        border-radius: 50px;
+        height: 10px;
+        outline: NONE;
+    }
+    .range::-webkit-slider-thumb{
+        -webkit-appearance:none;
+        height: 20px;
+        width: 20px;
+        border: 1px solid rgba(0, 0, 0, 0.36);
+        border-radius: 30px;
+        background: rgba(131, 208, 255, 0.75);
+    }
+		.div1{
+			height: 720px;
+			width: 10px;
+			background: rgba(255,0,0,1);
+			position: absolute;
+			left: 30%;
+			transform:translateY(-50%);
+			top: 62%;
+			box-shadow: 0 0 100px red;
+		}
+		.div1::before,.div1::after{
+			content: "";
+			background: red;
+			position: absolute;
+			left: 0px;
+			height: 30px;
+			width: 10px;
+		}
+		.div1::before{
+			top: -30px;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+		}
+		.div1::after{
+			bottom: -30px;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+		}
+		.div2{
+			height: 720px;
+			width: 10px;
+			background: rgba(255,0,0,1);
+			position: absolute;
+			right: 30%;
+			transform:translateY(-50%);
+			top: 62%;
+		}
+		.div2::before,.div2::after{
+			content: "";
+			background: red;
+			position: absolute;
+			left: 0px;
+			height: 30px;
+			width: 10px;
+		}
+		.div2::before{
+			top: -30px;
+			border-top-left-radius: 50%;
+			border-top-right-radius: 50%;
+		}
+		.div2::after{
+			bottom: -30px;
+			border-bottom-left-radius: 50%;
+			border-bottom-right-radius: 50%;
+		}
+		.derAba{
+			position: absolute;
+			top: 100%;
+			left: 100%;
+		}
+		.izqArr{
+			position: absolute;
+			top: 35px;
+			left: 35px;
+		}
+		.circle, .circle2{
+			background: red;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 350px;
+			width: 350px;
+			border-radius: 50%;
+			box-shadow: 0 0 90px red;
+		}
+		.circle2{
+			background: black;
+			height: 340px;
+			width: 340px;
+			border-radius: 50%;
+			box-shadow:inset 0 0 90px red;
+		}
+		.circle3, .circle4{
+			background: blue;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 250px;
+			width: 250px;
+			border-radius: 50%;
+			box-shadow: 0 0 90px blue;
+		}
+		.circle4{
+			background: black;
+			height: 240px;
+			width: 240px;
+			border-radius: 50%;
+			box-shadow:inset 0 0 90px blue;
+		}
+		.circle5, .circle6{
+			background: green;
+			transform: translate(-50%,-50%);
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			box-shadow: 0 0 90px green;
+		}
+		.circle6{
+			background: black;
+			height: 140px;
+			width: 140px;
+			border-radius: 50%;
+			box-shadow:inset 0 0 90px green;
+		}
+	</style>
+</html>
